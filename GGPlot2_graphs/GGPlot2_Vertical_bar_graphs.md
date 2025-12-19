@@ -13,21 +13,22 @@ library(ggplot2)
 ```
 
 # read
-``{cmd}
+```{cmd}
 df <- read.csv("KOG_M_but.csv", check.names = FALSE, stringsAsFactors = FALSE)
 df$`CDS Count` <- as.numeric(df$`CDS Count`)
-
+```
 # ensure full A->Z (missing letters get CDS Count = 0)
-``{cmd}
+```{cmd}
 alpha <- toupper(LETTERS)
 df2 <- df %>%
   mutate(`KOG Function Class` = as.character(`KOG Function Class`)) %>%
   complete(`KOG Function Class` = alpha,
            fill = list(`CDS Count` = 0, `KOG class description` = NA)) %>%
   mutate(`KOG Function Class` = factor(`KOG Function Class`, levels = alpha)
-  )```
+  )
+  ```
 # create a wrapped label for legend entries so each legend item is multi-line
-``{cmd}
+```{cmd}
 df2 <- df2 %>%
   mutate(short_desc = ifelse(is.na(`KOG class description`), "NA",
                              str_wrap(`KOG class description`, width = 36)))
@@ -37,7 +38,9 @@ n_legs <- n_distinct(df2$short_desc)
 base_cols <- brewer.pal(min(12, n_legs), "Paired")                 
 palette_cols <- colorRampPalette(base_cols)(n_legs)               
 names(palette_cols) <- levels(factor(df2$short_desc)
-)```
+)
+```
+
 
 # plotting
 ```{cmd}
