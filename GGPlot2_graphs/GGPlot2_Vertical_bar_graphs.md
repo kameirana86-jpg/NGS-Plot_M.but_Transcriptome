@@ -132,14 +132,14 @@ ggsave(
   limitsize = FALSE
 )
 ```
-# Use a vector SVG device (preferably cairo_svg for better text/font handling). DPI is ignored for vector output, so you can drop it. Example ready for publication:
+# Use a vector SVG device. DPI is ignored for vector output, so you can drop it. Example ready for publication:
 
 # Preferred (better font/text rendering)
 ```{cmd}
 ggsave(
   filename  = "KOG_barplot.svg",
   plot      = p_fixed,
-  device    = cairo_svg,   # use cairo_svg for reliable text rendering / font embedding
+  device    = svg,   # use cairo_svg for reliable text rendering / font embedding
   width     = 18,
   height    = 10,
   units     = "in",
