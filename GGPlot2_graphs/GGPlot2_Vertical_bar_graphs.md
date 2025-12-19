@@ -31,17 +31,18 @@ df2 <- df %>%
 ```{cmd}
 df2 <- df2 %>%
   mutate(short_desc = ifelse(is.na(`KOG class description`), "NA",
-                             str_wrap(`KOG class description`, width = 36)))
+                             str_wrap(`KOG class description`, width = 36))
+)
+```
 
 # prepare a distinct palette (adapts to number of unique legend items)
+```{cmd}
 n_legs <- n_distinct(df2$short_desc)
 base_cols <- brewer.pal(min(12, n_legs), "Paired")                 
 palette_cols <- colorRampPalette(base_cols)(n_legs)               
 names(palette_cols) <- levels(factor(df2$short_desc)
 )
 ```
-
-
 # plotting
 ```{cmd}
 maxy <- max(df2$`CDS Count`, na.rm = TRUE)
