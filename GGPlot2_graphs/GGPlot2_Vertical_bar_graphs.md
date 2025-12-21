@@ -1,4 +1,4 @@
-# Plot CDS_KMER_Plot
+# Plot KOG Vertical Bar Plot
 - Using ggplot
 - First install GGPLOT
 # packages required to be installed
