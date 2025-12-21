@@ -1,4 +1,4 @@
-# Plot KOG Vertical Bar Plot
+# Plot KOG Vertical Bar Chart
 - Using ggplot
 - First install GGPLOT
 # packages required to be installed
