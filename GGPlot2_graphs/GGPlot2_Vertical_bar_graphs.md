@@ -109,7 +109,6 @@ ggsave("KOG_barplot_style_A_to_Z.pdf", p, width = 16, height = 7, device = "pdf"
 # This mimics the “maximized” behavior like observed in Image viewer.
 ```{cmd}
 > library(grid)
-
 p_fixed <- p +
   theme(
     legend.position = "right",
