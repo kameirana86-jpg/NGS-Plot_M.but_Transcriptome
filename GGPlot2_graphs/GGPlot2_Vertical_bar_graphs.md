@@ -86,7 +86,6 @@ print(p)
 # Fixing Legend Position and Plot Margins Using `grid`
 ```{cmd}
 > library(grid)
-
 p_fixed <- p +
   theme(
     legend.position = "right",
@@ -100,30 +99,6 @@ p_fixed <- p +
     legend.key.height = unit(0.9, "cm")
   )
   ```
-# save wide so legend remains a single column and resembles your PNG
-
-```{cmd}
-ggsave("KOG_barplot_style_A_to_Z.pdf", p, width = 16, height = 7, device = "pdf")
-```
-# Put legend OUTSIDE the plot + increase right margin
-# This mimics the “maximized” behavior like observed in Image viewer.
-```{cmd}
-> library(grid)
-p_fixed <- p +
-  theme(
-    legend.position = "right",
-    legend.box.just = "left",
-
-    # VERY IMPORTANT: increase right margin
-    plot.margin = margin(t = 4, r = 50, b = 4, l = 4),
-
-    legend.text  = element_text(size = 10),
-    legend.title = element_text(size = 11),
-    legend.key.height = unit(0.9, "cm")
-  )
-  ```
-# Save with LARGE width (this is the key)
-  - This is what actually prevents clipping.
 # PNG (publication safe)
 ```{cmd}
 ggsave(
