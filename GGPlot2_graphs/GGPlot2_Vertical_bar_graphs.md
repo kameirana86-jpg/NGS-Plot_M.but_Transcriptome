@@ -83,6 +83,23 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
 ```{cmd}
 print(p)
 ```
+# Fixing Legend Position and Plot Margins Using `grid`
+```{cmd}
+> library(grid)
+
+p_fixed <- p +
+  theme(
+    legend.position = "right",
+    legend.box.just = "left",
+
+    # VERY IMPORTANT: increase right margin
+    plot.margin = margin(t = 4, r = 50, b = 4, l = 4),
+
+    legend.text  = element_text(size = 10),
+    legend.title = element_text(size = 11),
+    legend.key.height = unit(0.9, "cm")
+  )
+  ```
 # save wide so legend remains a single column and resembles your PNG
 
 ```{cmd}
