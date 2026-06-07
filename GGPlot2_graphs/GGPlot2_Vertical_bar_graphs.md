@@ -65,8 +65,8 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
     axis.line.x = element_line(color = "black", linewidth = 0.8),
     axis.line.y = element_line(color = "black", linewidth = 0.8),
     axis.ticks = element_line(color = "black"),
-    axis.text.x = element_text(size = 12, vjust = 0.5, face = "bold", color = "black"),
-    axis.text.y = element_text(size = 12, face = "bold", color = "black"),
+    axis.text.x = element_text(size = 14, vjust = 0.5, face = "bold", color = "black"),
+    axis.text.y = element_text(size = 14, face = "bold", color = "black"),
     axis.title = element_text(face = "bold"),
     plot.title = element_text(hjust = 0.5, size = 20, face = "bold"),
     # legend: single tall column on right
@@ -95,8 +95,8 @@ p_fixed <- p +
     # VERY IMPORTANT: increase right margin
     plot.margin = margin(t = 4, r = 50, b = 4, l = 4),
 
-    legend.text  = element_text(size = 10),
-    legend.title = element_text(size = 11),
+    legend.text  = element_text(size = 13),
+    legend.title = element_text(size = 12.5),
     legend.key.height = unit(0.9, "cm")
   )
   ```
