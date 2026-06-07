@@ -51,7 +51,7 @@ pad <- maxy * 0.08   # add some headroom for text labels
 p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_desc)) +
   geom_col(width = 0.78, colour = "black", size = 0.25) +
   geom_text(aes(label = ifelse(`CDS Count` == 0, "", `CDS Count`)),
-            vjust = -0.4, size = 3.2, fontface = "bold") +
+            vjust = -0.4, size = 6, fontface = "bold") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, maxy + pad)) +
   scale_fill_manual(values = palette_cols, na.value = "grey60") +
   labs(title = "KOG function categories (A -> Z)",
