@@ -65,6 +65,9 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_line(color = "grey92"),
     # axes & text
+    axis.line.x = element_line(color = "black", linewidth = 0.8),
+    axis.line.y = element_line(color = "black", linewidth = 0.8),
+    axis.ticks = element_line(color = "black"),
     axis.text.x = element_text(
       size = 12, vjust = 0.5, face = "bold", color = "black"
     ),
