@@ -66,6 +66,11 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
     panel.grid.major.y = element_line(color = "grey92"),
     # axes & text
     axis.text.x = element_text(size = 12, vjust = 0.5),
+ axis.text.x = element_text(
+      size = 12, vjust = 0.5, face = "bold", color = "black"
+    ),
+    axis.text.y = element_text(size = 12, face = "bold", color = "black"
+    ),
     axis.title = element_text(face = "bold"),
     plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
     # legend: single tall column on right
