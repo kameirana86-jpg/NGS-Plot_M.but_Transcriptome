@@ -60,10 +60,7 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
        fill = "KOG class description") +
   theme_minimal(base_size = 13) +
   theme(
-    # grid & panel
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank(),
-     # axes & text
+    # axes & text
     axis.line.x = element_line(color = "black", linewidth = 0.8),
     axis.line.y = element_line(color = "black", linewidth = 0.8),
     axis.ticks = element_line(color = "black"),
