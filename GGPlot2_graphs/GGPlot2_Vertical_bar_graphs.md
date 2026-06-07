@@ -86,7 +86,7 @@ print(p)
 ```
 # Fixing Legend Position and Plot Margins Using `grid`
 ```{cmd}
-> library(grid)
+library(grid)
 p_fixed <- p +
   theme(
     legend.position = "right",
@@ -108,7 +108,7 @@ ggsave(
   width    = 18,     # ← MUST be large
   height   = 10,
   units    = "in",
-  dpi      = 300,
+  dpi      = 600,
   limitsize = FALSE)
   ```
 
