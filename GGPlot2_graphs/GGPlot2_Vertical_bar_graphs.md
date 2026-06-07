@@ -49,7 +49,7 @@ maxy <- max(df2$`CDS Count`, na.rm = TRUE)
 pad <- maxy * 0.08   # add some headroom for text labels
 
 p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_desc)) +
-  geom_col(width = 0.78, colour = "black", size = 0.25) +
+  geom_col(width = 0.78, colour = "black", linewidth = 0.25) +
   geom_text(aes(label = ifelse(`CDS Count` == 0, "", `CDS Count`)),
             vjust = -0.4, size = 6, fontface = "bold") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, maxy + pad)) +
@@ -66,11 +66,8 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
     axis.line.x = element_line(color = "black", linewidth = 0.8),
     axis.line.y = element_line(color = "black", linewidth = 0.8),
     axis.ticks = element_line(color = "black"),
-    axis.text.x = element_text(
-      size = 12, vjust = 0.5, face = "bold", color = "black"
-    ),
-    axis.text.y = element_text(size = 12, face = "bold", color = "black"
-    ),
+    axis.text.x = element_text(size = 12, vjust = 0.5, face = "bold", color = "black"),
+    axis.text.y = element_text(size = 12, face = "bold", color = "black"),
     axis.title = element_text(face = "bold"),
     plot.title = element_text(hjust = 0.5, size = 20, face = "bold"),
     # legend: single tall column on right
