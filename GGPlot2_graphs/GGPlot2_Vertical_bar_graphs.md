@@ -74,7 +74,7 @@ p <- ggplot(df2, aes(x = `KOG Function Class`, y = `CDS Count`, fill = short_des
     legend.key.size = unit(0.45, "cm"),
     legend.key.height = unit(0.9, "cm"),
     legend.spacing.y = unit(0.2, "cm"),
-    legend.text = element_text(size = 10),
+    legend.text = element_text(size = 15),
     legend.title = element_text(size = 11, face = "bold")
   ) +
   guides(fill = guide_legend(ncol = 1, byrow = FALSE, override.aes = list(size = 5)))
