@@ -112,12 +112,9 @@ p <- ggplot(df, aes(x = Length_Range, y = Count)) +
       color = "black",
       size = 11
     ),
-    panel.grid.major.y = element_line(
-      color = "grey80",
-      linetype = "dashed"
-    ),
-    panel.grid.minor = element_blank(),
-    legend.position = "none"
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  legend.position = "none
   )
 print(p))
 ```
