@@ -93,11 +93,11 @@ p <- ggplot(df, aes(x = Length_Range, y = Count)) +
     plot.title = element_text(
       hjust = 0.5,
       face = "bold",
-      size = 18
+      size = 20
     ),
     axis.title = element_text(
       face = "bold",
-      size = 14,
+      size = 20,
       color = "black"
     ),
     axis.text.x = element_text(
@@ -105,12 +105,12 @@ p <- ggplot(df, aes(x = Length_Range, y = Count)) +
       hjust = 1,
       face = "bold",
       color = "black",
-      size = 10
+      size = 14
     ),
     axis.text.y = element_text(
       face = "bold",
       color = "black",
-      size = 11
+      size = 15
     ),
   panel.grid.major = element_blank(),
   panel.grid.minor = element_blank(),
