@@ -16,6 +16,13 @@ library(stringr)
 library(grid)
 library(ggplot2)
 ```
+# Install packages if not already installed
+# install.packages("ggplot2")
+# install.packages("Biostrings")
+```{cmd}
+library(Biostrings)
+library(ggplot2)
+```
 # Read transcript assembly fasta file
 ```{cmd}
 fasta <- readDNAStringSet("Transcript_assembly.fasta")
