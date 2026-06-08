@@ -16,3 +16,97 @@ library(stringr)
 library(grid)
 library(ggplot2)
 ```
+# Read transcript assembly fasta file
+fasta <- readDNAStringSet("Transcript_assembly.fasta")
+
+# Calculate transcript lengths
+transcript_lengths <- width(fasta)
+
+# Define length bins
+bins <- c(0, 200, 300, 400, 500, 600, 700, 800, 900,
+          1000, 5000, 10000, 15000, 20000, Inf)
+
+labels <- c(
+  "Length < 200",
+  "Length >= 200 & <= 300",
+  "Length > 300 & <= 400",
+  "Length > 400 & <= 500",
+  "Length > 500 & <= 600",
+  "Length > 600 & <= 700",
+  "Length > 700 & <= 800",
+  "Length > 800 & <= 900",
+  "Length > 900 & <= 1000",
+  "Length > 1000 & <= 5000",
+  "Length > 5000 & <= 10000",
+  "Length > 10000 & <= 15000",
+  "Length > 15000 & <= 20000",
+  "Length > 20000"
+)
+
+# Categorize transcript lengths
+length_category <- cut(
+  transcript_lengths,
+  breaks = bins,
+  labels = labels,
+  include.lowest = TRUE,
+  right = TRUE
+)
+
+# Count transcripts in each category
+df <- as.data.frame(table(length_category))
+colnames(df) <- c("Length_Range", "Count")
+
+# Plot
+p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
+  geom_bar(stat = "identity",
+           color = "black",
+           linewidth = 0.4) +
+  scale_fill_gradient(low = "#3B5B92",
+                      high = "#2CB17E") +
+  labs(
+    title = "Assembly Length Distribution",
+    x = "Transcript Assembly",
+    y = "No of Transcripts"
+  ) +
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(
+      hjust = 0.5,
+      face = "bold",
+      size = 18
+    ),
+    axis.title = element_text(
+      face = "bold",
+      size = 14,
+      color = "black"
+    ),
+    axis.text.x = element_text(
+      angle = 45,
+      hjust = 1,
+      face = "bold",
+      color = "black",
+      size = 10
+    ),
+    axis.text.y = element_text(
+      face = "bold",
+      color = "black",
+      size = 11
+    ),
+    panel.grid.major.y = element_line(
+      color = "grey80",
+      linetype = "dashed"
+    ),
+    panel.grid.minor = element_blank(),
+    legend.position = "none"
+  )
+
+print(p)
+
+# Save high-resolution figure
+ggsave(
+  "Assembly_Length_Distribution.png",
+  plot = p,
+  width = 12,
+  height = 7,
+  dpi = 600
+)
