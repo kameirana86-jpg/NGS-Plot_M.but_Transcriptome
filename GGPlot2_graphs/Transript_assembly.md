@@ -17,12 +17,15 @@ library(grid)
 library(ggplot2)
 ```
 # Read transcript assembly fasta file
+```{cmd}
 fasta <- readDNAStringSet("Transcript_assembly.fasta")
-
+```
 # Calculate transcript lengths
+```{cmd}
 transcript_lengths <- width(fasta)
-
+```
 # Define length bins
+```{cmd}
 bins <- c(0, 200, 300, 400, 500, 600, 700, 800, 900,
           1000, 5000, 10000, 15000, 20000, Inf)
 
@@ -42,8 +45,9 @@ labels <- c(
   "Length > 15000 & <= 20000",
   "Length > 20000"
 )
-
+```
 # Categorize transcript lengths
+```{cmd}
 length_category <- cut(
   transcript_lengths,
   breaks = bins,
@@ -51,12 +55,14 @@ length_category <- cut(
   include.lowest = TRUE,
   right = TRUE
 )
-
+```
 # Count transcripts in each category
+```{cmd}
 df <- as.data.frame(table(length_category))
 colnames(df) <- c("Length_Range", "Count")
-
+```
 # Plot
+```{cmd}
 p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
   geom_bar(stat = "identity",
            color = "black",
@@ -99,10 +105,10 @@ p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
     panel.grid.minor = element_blank(),
     legend.position = "none"
   )
-
 print(p)
-
+```
 # Save high-resolution figure
+```{cmd}
 ggsave(
   "Assembly_Length_Distribution.png",
   plot = p,
@@ -110,3 +116,4 @@ ggsave(
   height = 7,
   dpi = 600
 )
+```
