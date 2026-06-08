@@ -70,12 +70,19 @@ colnames(df) <- c("Length_Range", "Count")
 ```
 # Plot
 ```{cmd}
-p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
-  geom_bar(stat = "identity",
-           color = "black",
-           linewidth = 0.4) +
-  scale_fill_gradient(low = "#3B5B92",
-                      high = "#2CB17E") +
+# Create gradient colors for bars
+bar_colors <- colorRampPalette(
+  c("#08306B", "#238B45", "#A1D99B")
+)(nrow(df))
+
+# Plot
+p <- ggplot(df, aes(x = Length_Range, y = Count)) +
+  geom_bar(
+    stat = "identity",
+    fill = bar_colors,
+    color = "black",
+    linewidth = 0.4
+  ) +
   labs(
     title = "Assembly Length Distribution",
     x = "Transcript Assembly",
@@ -86,11 +93,11 @@ p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
     plot.title = element_text(
       hjust = 0.5,
       face = "bold",
-      size = 20
+      size = 18
     ),
     axis.title = element_text(
       face = "bold",
-      size = 20,
+      size = 14,
       color = "black"
     ),
     axis.text.x = element_text(
@@ -98,12 +105,12 @@ p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
       hjust = 1,
       face = "bold",
       color = "black",
-      size = 16
+      size = 10
     ),
     axis.text.y = element_text(
       face = "bold",
       color = "black",
-      size = 16
+      size = 11
     ),
     panel.grid.major.y = element_line(
       color = "grey80",
@@ -112,7 +119,7 @@ p <- ggplot(df, aes(x = Length_Range, y = Count, fill = Count)) +
     panel.grid.minor = element_blank(),
     legend.position = "none"
   )
-print(p)
+print(p))
 ```
 # Save high-resolution figure
 ```{cmd}
