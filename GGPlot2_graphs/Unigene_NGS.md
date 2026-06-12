@@ -100,22 +100,21 @@ p <- ggplot(plot_df,
   ) +
   
   theme_classic(base_size = 12) +
-  
-  theme(
+    theme(
     plot.title = element_text(
       hjust = 0.5,
       face = "bold",
-      size = 16
+      size = 20
     ),
     
     axis.title = element_text(
       face = "bold",
-      size = 16,
+      size = 18,
       color = "black"
     ),
     
     axis.text = element_text(
-      size = 14,
+      size = 16,
       color = "black",
       face = "bold"
     ),
