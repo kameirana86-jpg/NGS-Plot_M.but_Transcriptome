@@ -1,10 +1,18 @@
-#To activate Conda environment
+# To activate Conda environment
 ```{cmd}
 conda activate r4.5
 ```
 #To activate R environment
 ```{cmd}
 R
+```
+# To check directory
+```{cmd}
+getwd()
+```
+# To set change directory
+```{cmd}
+setwd("/home/rana/M.but_Transcriptome")
 ```
 # Install if needed:
 # install.packages(c("ggplot2", "dplyr", "stringr"))
