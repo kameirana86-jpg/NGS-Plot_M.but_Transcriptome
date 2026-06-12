@@ -87,18 +87,16 @@ p <- ggplot(plot_df,
   # Make axes start at zero
   scale_y_continuous(expand = c(0, 0)) +
   scale_x_discrete(expand = c(0, 0)) +
-    labs(title = "Assembly Length Distribution",
-    x = "Unigene Assembly Length (bp)",
-    y = "No. of Unigenes") +
-  
+  labs(title = "Assembly Length Distribution",
+  x = "Unigene Assembly Length (bp)",
+  y = "No. of Unigenes") +
   theme_classic(base_size = 12) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
-    axis.title = element_text(face = "bold", size = 16, color = "black"),
-    
-    axis.text = element_text(size = 14, color = "black", face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.line = element_line(color = "black", linewidth = 1),
-    axis.ticks = element_line(color = "black", linewidth = 0.8)
+  axis.title = element_text(face = "bold", size = 16, color = "black"),
+  axis.text = element_text(size = 14, color = "black", face = "bold"),
+  axis.text.x = element_text(angle = 45, hjust = 1),
+  axis.line = element_line(color = "black", linewidth = 1),
+  axis.ticks = element_line(color = "black", linewidth = 0.8)
   )
 
 # Display plot
