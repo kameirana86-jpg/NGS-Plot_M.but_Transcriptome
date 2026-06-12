@@ -83,7 +83,7 @@ p <- ggplot(plot_df, aes(x = Length_Range, y = n, fill = n)) +
   plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
   axis.title = element_text(face = "bold", size = 16, color = "black"),
   axis.text = element_text(size = 14, color = "black", face = "bold"),
-  axis.text.x = element_text(angle = 45, hjust = 1),
+  axis.text.x = element_text(angle = 45, hjust = 1)
  ```
 # To generate plot or print preview
 ```{cmd}
