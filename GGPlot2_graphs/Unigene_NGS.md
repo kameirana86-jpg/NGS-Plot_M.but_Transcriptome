@@ -24,7 +24,7 @@ library(dplyr)
 library(stringr)
 
 # Read FASTA as a DNAStringSet
-fasta_file <- "NGS_240492_combined_Unigenes.fasta"
+fasta_file <- "Unigenes_NGS.fasta"
 unigene_set <- readDNAStringSet(fasta_file)
 
 # Get sequence lengths
