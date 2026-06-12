@@ -114,13 +114,13 @@ p <- ggplot(plot_df,
     ),
     
     axis.text = element_text(
-      size = 16,
+      size = 14,
       color = "black",
       face = "bold"
     ),
     
     axis.text.x = element_text(
-      angle = 56,
+      angle = 57,
       hjust = 1
     ),
     
