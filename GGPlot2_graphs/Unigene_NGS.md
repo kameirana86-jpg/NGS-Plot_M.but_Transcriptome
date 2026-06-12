@@ -73,6 +73,7 @@ plot_df <- df %>%
 plot_df$ColorIndex <- seq_len(nrow(plot_df))
 ```
 # Plot
+```{cmd}
 p <- ggplot(plot_df,
             aes(x = Length_Range,
                 y = n,
@@ -134,6 +135,7 @@ p <- ggplot(plot_df,
       linewidth = 0.8
     )
   )
+```
 # Display plot
 ```{cmd}
 print(p)
