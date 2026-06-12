@@ -17,20 +17,24 @@ setwd("/home/rana/M.but_Transcriptome")
 # Install if needed:
 # install.packages(c("ggplot2", "dplyr", "stringr"))
 # BiocManager::install("Biostrings")
-
+```{cmd}
 library(Biostrings)
 library(ggplot2)
 library(dplyr)
 library(stringr)
+```
 
 # Read FASTA as a DNAStringSet
+```{cmd}
 fasta_file <- "Unigenes_NGS.fasta"
 unigene_set <- readDNAStringSet(fasta_file)
-
+```
 # Get sequence lengths
+```{cmd}
 seq_len <- width(unigene_set)
-
+```
 # Put lengths into bins like your plot
+```{cmd}
 df <- data.frame(length = seq_len) %>%
   mutate(
     Length_Range = cut(
@@ -57,13 +61,15 @@ df <- data.frame(length = seq_len) %>%
       include.lowest = TRUE
     )
   )
-
+```
 # Count sequences per bin
+```{cmd}
 plot_df <- df %>%
   count(Length_Range) %>%
   mutate(Length_Range = factor(Length_Range, levels = levels(df$Length_Range)))
-
+```
 # Plot
+```{cmd}
 p <- ggplot(plot_df, aes(x = Length_Range, y = n, fill = n)) +
   geom_bar(stat = "identity", color = "black", linewidth = 0.3) +
   scale_fill_gradient(low = "#2C7FB8", high = "#2CA25F") +
@@ -78,8 +84,12 @@ p <- ggplot(plot_df, aes(x = Length_Range, y = n, fill = n)) +
     axis.title = element_text(face = "bold"),
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
-
+```
+# To generate plot or print preview
+```{cmd}
 print(p)
-
+```
 # Save plot
+```{cmd}
 ggsave("unigene_length_distribution.png", p, width = 12, height = 6, dpi = 300)
+```
