@@ -141,5 +141,5 @@ print(p)
 ```
 # Save plot
 ```{cmd}
-ggsave("unigene_length_distribution.png", p, width = 12, height = 6, dpi = 300)
+ggsave("unigene_length_distribution.png", p, width = 12, height = 6, dpi = 600)
 ```
