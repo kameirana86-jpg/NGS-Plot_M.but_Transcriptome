@@ -120,7 +120,7 @@ p <- ggplot(plot_df,
     ),
     
     axis.text.x = element_text(
-      angle = 45,
+      angle = 56,
       hjust = 1
     ),
     
