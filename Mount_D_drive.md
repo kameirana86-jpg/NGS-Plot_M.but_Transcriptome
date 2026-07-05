@@ -35,3 +35,13 @@ After the analysis finishes, list the files:
 ```{cmd}
 ls
 ```
+# You should now see:
+clean_R1.fastq.gz
+clean_R2.fastq.gz
+fastp.html
+fastp.json
+
+# To open the HTML report in your Windows browser from WSL, run:
+```{cmd}
+explorer.exe fastp.html
+```
