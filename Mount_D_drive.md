@@ -3,9 +3,7 @@
 ls /mnt
 ```
 
-# You should see something like:
-
-c  d
+# You should see something like: c  d
 
 # If you see d, then run:
 ```{cmd}
