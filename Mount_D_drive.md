@@ -3,14 +3,15 @@
 ls /mnt
 ```
 
-You should see something like:
+# You should see something like:
 
 c  d
 
-If you see d, then run:
-
+# If you see d, then run:
+```{cmd}
 cd /mnt/d/D/NGS_RANA/01_Raw_Data
-
-Then:
-
+```
+# Then:
+```{cmd}
 ls
+```
