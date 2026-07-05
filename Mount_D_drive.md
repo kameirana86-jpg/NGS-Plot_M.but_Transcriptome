@@ -21,6 +21,17 @@ ls *.fastq*
 Meizotropisn-buteiformis-seeds_S97_L008_R1_001.fastq
 Meizotropisn-buteiformis-seeds_S97_L008_R2_001.fastq
 
+# If fastp is installed, run this command
+Use the compressed (.fastq.gz) files: This may take several minutes depending on the file size.
+```{cmd}
+fastp \
+-i Meizotropisn-buteiformis-seeds_S97_L008_R1_001.fastq.gz \
+-I Meizotropisn-buteiformis-seeds_S97_L008_R2_001.fastq.gz \
+-o clean_R1.fastq.gz \
+-O clean_R2.fastq.gz \
+-h fastp.html \
+-j fastp.json
+```
 # If your files are not compressed (.fastq), use:
 ```{cmd} fastp \
 -i Meizotropisn-buteiformis-seeds_S97_L008_R1_001.fastq \
