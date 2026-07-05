@@ -1,8 +1,6 @@
-Step 1: Check whether the D: drive is mounted
-
-Run:
-
-ls /mnt
+# Step 1: Check whether the D: drive is mounted
+`` {cmd} ls /mnt
+```
 
 You should see something like:
 
