@@ -13,3 +13,25 @@ cd /mnt/d/D/NGS_RANA/01_Raw_Data
 ```{cmd}
 ls
 ```
+# Check the FASTQ files, Run:
+```{cmd}
+ls *.fastq*
+```
+# You should see something like: 
+Meizotropisn-buteiformis-seeds_S97_L008_R1_001.fastq
+Meizotropisn-buteiformis-seeds_S97_L008_R2_001.fastq
+
+# If your files are not compressed (.fastq), use:
+```{cmd} fastp \
+-i Meizotropisn-buteiformis-seeds_S97_L008_R1_001.fastq \
+-I Meizotropisn-buteiformis-seeds_S97_L008_R2_001.fastq \
+-o clean_R1.fastq.gz \
+-O clean_R2.fastq.gz \
+-h fastp.html \
+-j fastp.json
+```
+# Open the report
+After the analysis finishes, list the files:
+```{cmd}
+ls
+```
