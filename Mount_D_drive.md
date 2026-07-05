@@ -56,3 +56,24 @@ fastp.json
 ```{cmd}
 explorer.exe fastp.html
 ```
+# Before running that, first check that the files exist
+Run this command:
+```{cmd}
+ls -lh fastp.html fastp.json
+```
+# If they exist, you'll see something like:
+-rw-r--r-- 1 rana rana 1.2M Jul 5 16:45 fastp.html
+-rw-r--r-- 1 rana rana 300K Jul 5 16:45 fastp.json
+
+# Then open the report
+Type only this command:
+```{cmd}
+explorer.exe fastp.html
+```
+or
+```{cmd}
+explorer.exe .
+```
+
+
+The second command opens the current folder in Windows Explorer. Then simply double-click fastp.html.
