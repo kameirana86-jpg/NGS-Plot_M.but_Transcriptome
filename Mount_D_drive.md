@@ -1,5 +1,6 @@
 # Step 1: Check whether the D: drive is mounted
-`` {cmd} ls /mnt
+``` {cmd}
+ls /mnt
 ```
 
 You should see something like:
